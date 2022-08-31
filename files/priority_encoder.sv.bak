@@ -1,0 +1,14 @@
+module priority_encoder(input logic [3:0] color_red, color_green, color_blue,
+								maze_red, maze_green, maze_blue,
+								output logic [3:0] red, green, blue);
+								
+	always_comb
+	begin
+		
+		if ({color_red, color_green, color_blue} == -1)
+			{red,green,blue} = {maze_red, maze_green, maze_blue};
+		else 
+			{red,green,blue} = {color_red, color_green, color_blue};
+	end
+								
+endmodule

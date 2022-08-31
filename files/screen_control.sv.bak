@@ -1,0 +1,54 @@
+module screen_control(input reset, redwin, greenwin, clk, 
+							 input [3:0] gamer, gameb, gameg,
+							 input [7:0] keycode,
+							 output [1:0] currstate);
+//00: start    01: game     10: red wins   11: green wins
+
+enum logic [1:0] {start, game, redwins, greenwins} State, Next_state;
+
+always_ff @ (posedge clk)
+	begin
+		if (reset) 
+			State <= start;
+		else 
+			State <= Next_state;
+	end
+
+//next state logic
+always_comb:
+begin
+	unique case (State):
+		start : 
+		if (keycode == 8'h2c):
+			Next_state = game;
+		else:
+			Next_state = start;
+		game :
+		if (redwin):
+			Next_state = redwins;
+		else if (greeenwin):
+			Next_State = greenwins;
+		else:
+			Next_state = game;
+		redwins: 
+		if (keycode == 8'h2c):
+			Next_state = start;
+		else:
+			Next_state = redwins;
+		greenwins:
+		if (keycode == 8'h2c):
+			Next_state = start;
+		else:
+			Next_state = greenwins;
+		default : ;
+	endcase 
+//output per state
+	case (State):
+		start: currstate = 2'b00;
+		game: currstate = 2'b01;
+		redwins: currstate = 2'b10;
+		greenwins: currstate = 2'11;
+		default : currstate = 2'b00;
+	endcase
+end
+endmodule 

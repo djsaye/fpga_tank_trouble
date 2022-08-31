@@ -1,0 +1,15 @@
+module timer (input clk_in,
+					input Reset,
+					output clk_out);
+
+always_ff @ (posedge clk_in or posedge Reset )
+    begin 
+        if (Reset) 
+            clk_out <= 1'b0;
+        else 
+            clk_out <= ~ (clk_out);
+    end	
+	
+					
+					
+endmodule

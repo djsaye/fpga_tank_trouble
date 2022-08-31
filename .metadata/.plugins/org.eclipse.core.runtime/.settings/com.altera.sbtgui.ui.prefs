@@ -1,0 +1,4 @@
+eclipse.preferences.version=1
+newSoftwareExampleWizardPage.defaultLocation=C\:\\intelFPGA_lite\\18.1\\385Labs\\Tank_Trouble\\files\\software\\Tank_Trouble_app
+newSoftwareExampleWizardPage.sopcinfoFile=C\:\\intelFPGA_lite\\18.1\\385Labs\\Tank_Trouble\\files\\Tank_Trouble_soc.sopcinfo
+newSoftwareExampleWizardPage2.newBspLocation=C\:\\intelFPGA_lite\\18.1\\385Labs\\Tank_Trouble\\files\\software\\Tank_Trouble_app_bsp

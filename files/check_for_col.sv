@@ -1,0 +1,20 @@
+module check_for_col (input logic [9:0] x, y,
+							input logic [3:0] wall,
+							output logic [7:0] addr,
+							output logic pos,
+							output logic collision);
+							
+always_comb begin
+
+	addr = (y>>6)*5 + (x>>7);
+	pos = x[6];
+	
+	collision = (((x[5:0] >= 6'd62) & wall[3]) //right wall
+		| ((y[5:0] >= 6'd62) & wall[2]) //bottom wall
+		| ((x[5:0] <= 6'd1) & wall[1]) //left wall
+		| ((y[5:0] <= 6'd1) & wall[0])); //top wall
+
+end
+							
+							
+endmodule

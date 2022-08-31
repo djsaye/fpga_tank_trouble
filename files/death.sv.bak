@@ -1,0 +1,8 @@
+module death(input [9:0] t1x, t1y, t2x, t2y,
+				 input [6:0] t1angle, t2angle.
+				 input [9:0] b1x, b1y, b2x, b2y, b3x, b3y, b4x, b4y, b5x, b5y, b6x, b6y,
+				 output redL, greenL);
+
+
+			
+endmodule 

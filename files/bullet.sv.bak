@@ -1,0 +1,6 @@
+module bullet (input topwall, bottomwall, rightwall, leftwall, trigger
+					input [6:0] angleshot, 
+					input [9:0] xshot, yshot,
+					output[9:0] );
+
+endmodule 

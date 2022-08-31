@@ -1,0 +1,67 @@
+module maze (input logic pixel_clk,
+					input logic [9:0] DrawX, DrawY,
+					output logic [3:0] red, green, blue);
+					
+					
+		logic [279:0] right, left, top, bottom;
+		logic rwall, lwall, twall, bwall;
+		logic on_rtcorner, on_rbcorner, on_ltcorner, on_lbcorner, on_rwall, on_lwall, on_bwall, on_twall; 
+		logic is_wall;
+		logic [7:0] addr;
+		logic [3:0] r,g,b;
+		logic [39:0] r_place, l_place;
+		
+		
+	
+		
+		always_comb
+		begin	
+				/*left=0 //should make a cross pattern, i think
+				right=-1;
+				top=-1;
+				bottom=0;*/
+				
+				top = {20'hfffff, 260'b0}; //should only highlight the border, i think
+				bottom = {160'b0, 20'hffffff};
+				r_place = 40'h0000100001;
+				l_place = 40'h8000080000;
+				left = {l_place, l_place, l_place, l_place, l_place, l_place, l_place};
+				right = {r_place, r_place, r_place, r_place, r_place, r_place, r_place};
+				
+				addr = (DrawY>>5)*20 + (DrawX>>5); //gets the address in the walls's arrays 
+				rwall = right[addr]; 
+				lwall = left[addr};
+				twall = top[addr];
+				bwall = bottom[addr];
+				
+				//for each block, a wall is 1 pixel length, but since walls will be combined
+					//(ie. right wall in one block is left wall in the block next to it), the walls
+						//are technically 2 pixels wide
+				on_rwall = ((DrawX[4:0])==0); //checks if the electron gun is pointing to right side of a block
+				on_lwall = ((DrawX[4:0])==31); //checks left side
+				on_twall = ((DrawY[4:0])==0); //checks top side
+				on_bwall = ((DrawY[4:0])==31); //checks bottom side
+				on_rtcorner = on_rwall & on_twall; //check if electron gun is pointing to the top right corner of a block
+				on_rbcorner = on_rwall & on_bwall; //checks bottom right corner
+				on_ltcorner = on_lwall & on_twall; //checks top left corner
+				on_lbcorner = on_lwall & on_bwall; //checks bottom left corner
+				
+				//if there is a wall present and the electron gun is pointing at that pixel of the block
+					//then color is black, else color is white
+				if(on_rtcorner & (rwall | twall)) 
+					{r,g,b}=0;
+				else if (on_rbcorner & (rwall | bwall))
+					{r,g,b}=0;
+				else if (on_ltcorner & (lwall | twall))
+					{r,g,b}=0;
+				else if (on_lbcorner & (lwall | bwall))
+					{r,g,b}=0;
+				else if ((on_rwall & rwall) | (on_twall & twall) | (on_bwall & bwall) | (on_lwall & lwall))
+					{r,g,b}=0;
+				else
+					{r,g,b}=-1;
+		end
+		
+endmodule
+		
+		

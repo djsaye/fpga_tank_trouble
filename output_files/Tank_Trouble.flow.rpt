@@ -1,0 +1,138 @@
+Flow report for Tank_Trouble
+Tue Aug 23 11:34:57 2022
+Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Flow Summary
+  3. Flow Settings
+  4. Flow Non-Default Global Settings
+  5. Flow Elapsed Time
+  6. Flow OS Summary
+  7. Flow Log
+  8. Flow Messages
+  9. Flow Suppressed Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2018  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details.
+
+
+
++----------------------------------------------------------------------------------+
+; Flow Summary                                                                     ;
++------------------------------------+---------------------------------------------+
+; Flow Status                        ; Successful - Tue Aug 23 11:34:57 2022       ;
+; Quartus Prime Version              ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
+; Revision Name                      ; Tank_Trouble                                ;
+; Top-level Entity Name              ; Tank_Trouble_TL                             ;
+; Family                             ; MAX 10                                      ;
+; Device                             ; 10M50DAF484C7G                              ;
+; Timing Models                      ; Final                                       ;
+; Total logic elements               ; N/A until Partition Merge                   ;
+;     Total combinational functions  ; N/A until Partition Merge                   ;
+;     Dedicated logic registers      ; N/A until Partition Merge                   ;
+; Total registers                    ; N/A until Partition Merge                   ;
+; Total pins                         ; N/A until Partition Merge                   ;
+; Total virtual pins                 ; N/A until Partition Merge                   ;
+; Total memory bits                  ; N/A until Partition Merge                   ;
+; Embedded Multiplier 9-bit elements ; N/A until Partition Merge                   ;
+; Total PLLs                         ; N/A until Partition Merge                   ;
+; UFM blocks                         ; N/A until Partition Merge                   ;
+; ADC blocks                         ; N/A until Partition Merge                   ;
++------------------------------------+---------------------------------------------+
+
+
++-----------------------------------------+
+; Flow Settings                           ;
++-------------------+---------------------+
+; Option            ; Setting             ;
++-------------------+---------------------+
+; Start date & time ; 08/23/2022 11:34:34 ;
+; Main task         ; Compilation         ;
+; Revision Name     ; Tank_Trouble        ;
++-------------------+---------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Flow Non-Default Global Settings                                                                                                                              ;
++-------------------------------------+--------------------------------------------------------------------+---------------+-------------------+----------------+
+; Assignment Name                     ; Value                                                              ; Default Value ; Entity Name       ; Section Id     ;
++-------------------------------------+--------------------------------------------------------------------+---------------+-------------------+----------------+
+; COMPILER_SIGNATURE_ID               ; 62096874793327.166127247428611                                     ; --            ; --                ; --             ;
+; EDA_OUTPUT_DATA_FORMAT              ; Systemverilog Hdl                                                  ; --            ; --                ; eda_simulation ;
+; EDA_SIMULATION_TOOL                 ; ModelSim-Altera (SystemVerilog)                                    ; <None>        ; --                ; --             ;
+; EDA_TIME_SCALE                      ; 1 ps                                                               ; --            ; --                ; eda_simulation ;
+; MAX_CORE_JUNCTION_TEMP              ; 85                                                                 ; --            ; --                ; --             ;
+; MIN_CORE_JUNCTION_TEMP              ; 0                                                                  ; --            ; --                ; --             ;
+; MISC_FILE                           ; files/Tank_Trouble_soc/synthesis/../Tank_Trouble_soc.cmp           ; --            ; --                ; --             ;
+; MISC_FILE                           ; files/Tank_Trouble_soc/synthesis/../../Tank_Trouble_soc.qsys       ; --            ; --                ; --             ;
+; MISC_FILE                           ; files/redwin_bb.v                                                  ; --            ; --                ; --             ;
+; MISC_FILE                           ; files/greenwin_bb.v                                                ; --            ; --                ; --             ;
+; MISC_FILE                           ; files/start_bb.v                                                   ; --            ; --                ; --             ;
+; OUTPUT_IO_TIMING_FAR_END_VMEAS      ; Half Signal Swing                                                  ; --            ; --                ; --             ;
+; OUTPUT_IO_TIMING_FAR_END_VMEAS      ; Half Signal Swing                                                  ; --            ; --                ; --             ;
+; OUTPUT_IO_TIMING_NEAR_END_VMEAS     ; Half Vccio                                                         ; --            ; --                ; --             ;
+; OUTPUT_IO_TIMING_NEAR_END_VMEAS     ; Half Vccio                                                         ; --            ; --                ; --             ;
+; PARTITION_COLOR                     ; -- (Not supported for targeted family)                             ; --            ; DE10_LITE_Default ; Top            ;
+; PARTITION_COLOR                     ; -- (Not supported for targeted family)                             ; --            ; Tank_Trouble_TL   ; Top            ;
+; PARTITION_FITTER_PRESERVATION_LEVEL ; -- (Not supported for targeted family)                             ; --            ; DE10_LITE_Default ; Top            ;
+; PARTITION_FITTER_PRESERVATION_LEVEL ; -- (Not supported for targeted family)                             ; --            ; Tank_Trouble_TL   ; Top            ;
+; PARTITION_NETLIST_TYPE              ; -- (Not supported for targeted family)                             ; --            ; DE10_LITE_Default ; Top            ;
+; PARTITION_NETLIST_TYPE              ; -- (Not supported for targeted family)                             ; --            ; Tank_Trouble_TL   ; Top            ;
+; POWER_BOARD_THERMAL_MODEL           ; None (CONSERVATIVE)                                                ; --            ; --                ; --             ;
+; POWER_PRESET_COOLING_SOLUTION       ; 23 MM HEAT SINK WITH 200 LFPM AIRFLOW                              ; --            ; --                ; --             ;
+; PROJECT_OUTPUT_DIRECTORY            ; output_files                                                       ; --            ; --                ; --             ;
+; SLD_FILE                            ; files/Tank_Trouble_soc/synthesis/Tank_Trouble_soc.regmap           ; --            ; --                ; --             ;
+; SLD_FILE                            ; files/Tank_Trouble_soc/synthesis/Tank_Trouble_soc.debuginfo        ; --            ; --                ; --             ;
+; SLD_INFO                            ; QSYS_NAME Tank_Trouble_soc HAS_SOPCINFO 1 GENERATION_ID 1651454467 ; --            ; Tank_Trouble_soc  ; --             ;
+; SOPCINFO_FILE                       ; files/Tank_Trouble_soc/synthesis/../../Tank_Trouble_soc.sopcinfo   ; --            ; --                ; --             ;
+; SYNTHESIS_ONLY_QIP                  ; On                                                                 ; --            ; --                ; --             ;
+; TOP_LEVEL_ENTITY                    ; Tank_Trouble_TL                                                    ; Tank_Trouble  ; --                ; --             ;
++-------------------------------------+--------------------------------------------------------------------+---------------+-------------------+----------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------+
+; Flow Elapsed Time                                                                                                          ;
++------------------------+--------------+-------------------------+---------------------+------------------------------------+
+; Module Name            ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
++------------------------+--------------+-------------------------+---------------------+------------------------------------+
+; Analysis & Elaboration ; 00:00:23     ; 1.0                     ; 1771 MB             ; 00:00:57                           ;
+; Total                  ; 00:00:23     ; --                      ; --                  ; 00:00:57                           ;
++------------------------+--------------+-------------------------+---------------------+------------------------------------+
+
+
++------------------------------------------------------------------------------------------------+
+; Flow OS Summary                                                                                ;
++------------------------+--------------------------+--------------+------------+----------------+
+; Module Name            ; Machine Hostname         ; OS Name      ; OS Version ; Processor type ;
++------------------------+--------------------------+--------------+------------+----------------+
+; Analysis & Elaboration ; djsaye-ThinkPad-P1-Gen-5 ; Ubuntu 22.04 ; 22         ; x86_64         ;
++------------------------+--------------------------+--------------+------------+----------------+
+
+
+------------
+; Flow Log ;
+------------
+quartus_map --read_settings_files=on --write_settings_files=off Tank_Trouble -c Tank_Trouble --analysis_and_elaboration
+
+
+

@@ -1,0 +1,53 @@
+module bullet_col (input logic Clk,
+							input logic [9:0] x, y,
+							input logic [3:0] wall,
+							output logic xcol, ycol,
+							output logic [7:0] addr,
+							output logic pos);
+							
+
+logic on_rwall, on_bwall, on_lwall, on_twall;
+logic rwall, bwall, lwall, twall;	
+
+/*always_comb begin	
+
+	addr = (y>>6)*5 + (x>>7);
+	pos = x[6];
+	
+	on_rwall = ((x[5:0])==6'd59) | ((x[5:0])==6'd60) | ((x[5:0])==6'd61) | ((x[5:0])==6'd58); //checks if the electron gun is pointing to right side of a block
+	on_bwall = ((y[5:0])==6'd59) | ((y[5:0])==6'd60) | ((y[5:0])==6'd61) | ((y[5:0])==6'd58); //checks bottom side
+	on_lwall = ((x[5:0])==6'd4) | ((x[5:0])==6'd3) | ((x[5:0])==6'd2) | ((x[5:0])==6'd5); //checks left side
+	on_twall = ((y[5:0])==6'd4) | ((y[5:0])==6'd3) | ((y[5:0])==6'd2) | ((y[5:0])==6'd5); //checks top side
+	
+	rwall = wall[3];
+	bwall = wall[2];
+	lwall = wall[1];
+	twall = wall[0];
+	
+	xcol = ((on_rwall & rwall) | (on_lwall & lwall));
+	ycol = ((on_bwall & bwall) | (on_twall & twall));
+	
+end*/
+
+
+always_ff @ (posedge Clk) begin
+
+	addr <= (y>>6)*5 + (x>>7);
+	pos <= x[6];
+	
+	on_rwall <= ((x[5:0])==6'd59) | ((x[5:0])==6'd60) | ((x[5:0])==6'd58); //checks if the electron gun is pointing to right side of a block
+	on_bwall <= ((y[5:0])==6'd59) | ((y[5:0])==6'd60) | ((y[5:0])==6'd58); //checks bottom side
+	on_lwall <= ((x[5:0])==6'd4) | ((x[5:0])==6'd3) | ((x[5:0])==6'd5); //checks left side
+	on_twall <= ((y[5:0])==6'd4) | ((y[5:0])==6'd3) | ((y[5:0])==6'd5); //checks top side
+	
+	rwall <= wall[3];
+	bwall <= wall[2];
+	lwall <= wall[1];
+	twall <= wall[0];
+	
+	xcol <= ((on_rwall & rwall) | (on_lwall & lwall));
+	ycol <= ((on_bwall & bwall) | (on_twall & twall));
+	
+end
+
+endmodule
